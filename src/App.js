@@ -1,9 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Greetings from './components/Greetings'
+import FoodList from './components/FoodList'; 
+import Hello from './components/Hello';
+
 function App() {
   return (
-    <h1>메롱~!</h1>
+<>
+
+<Hello/>
+
+<Greetings/>
+<FoodList/>
+
+</>
+
   );
 }
 
