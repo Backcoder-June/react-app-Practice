@@ -1,0 +1,44 @@
+
+.todo-input {
+    background: orange;
+    position: absolute;
+    bottom: 0;
+    /* 너비 다시 넣어줘야 함 absolute 때문에 깨짐 */
+    width: 100%;
+
+    padding: 32px 32px 72px; 
+    box-sizing: border-box;
+}
+
+.todo-input input {
+    border: 1px solid gray;
+    font-size: 18px;
+    border-radius: 4px;
+    width: 100;
+    padding: 12px;
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.begin-btn {
+    background: #38d9a9;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 60px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute; 
+    left: 50%;
+    bottom: -5%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    cursor: pointer;
+}

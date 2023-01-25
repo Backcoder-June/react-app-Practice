@@ -1,0 +1,13 @@
+.todo-template {
+    width: 512px;
+    height: 768px;
+    /* border: 4px solid orange; */
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 16px;
+    box-shadow: 0 0 10px gray;
+
+    position: relative;
+}
