@@ -9,6 +9,10 @@ function App() {
   return (
 <>
 
+{/* <Header /> 
+<SideBar />
+<Footer />  */}
+
 <Hello/>
 
 <Greetings/>
