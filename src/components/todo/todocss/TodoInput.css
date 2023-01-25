@@ -42,3 +42,19 @@
     z-index: 10;
     cursor: pointer;
 }
+
+
+.begin-btn:hover {
+    background: #63e6be;
+}
+
+/* 이 클래스에 추가로 open 이란 클래시가 붙으면, 즉 동시에 만족하면 */
+.begin-btn.open {
+    background: #ff6b6b;
+    transform: translate(-50%, 0) rotate(45deg);
+    transition: 0.5s;
+}
+
+.begin-btn.open:hover {
+    background: #ff8787;
+}
