@@ -13,3 +13,25 @@
     position: relative;
 
 }
+
+.loading {
+    position : absolute; 
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.loading .spinner-border {
+    width : 300px; 
+    height : 300px; 
+    --bs-spinner-border-width: 1.5rem;
+}
+
+.loading .spinner-grow {
+    width : 50px; 
+    height : 50px; 
+}
+
+.loading .text-danger {
+    color: orange !important;
+}
