@@ -51,7 +51,7 @@ const TodoTemplate = () => {
     // 수정 요청 
     const updateTodo = todo => {
     
-        fetch(`${API_BASE_URL}/${todo.id}`, {
+        fetch(`${API_BASE_URL}/${todo.todoId}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(todo)
