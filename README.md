@@ -23,14 +23,6 @@ $ npx create-react-app 프로젝트이름
 ( 웬만한거 바꾸지마 ) 
 
 
-
-기존 
-- 다 만들어진 페이지를 바꿔가며 JSON 데이터만 렌더링 
-
-리액트 
-- 싹 다 JSON 으로 짜서 렌더링 
-
-
 - index.js 
 => index.html 적용 js 
 => const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -71,3 +63,16 @@ package.json
 npm start
 => 시작 
 ( 디폴트 3000 port ) 
+
+
+6. 추가 설치
+[ reactstrap ] <= bootstrap 을 react 버전으로 가져온 거 
+둘다 깔아야함 
+npm install reactstrap react react-dom
+npm install --save bootstrap
+
+
+[ react 추가 install 도구 들 ] 
+$ npm install @mui/material @emotion/react @emotion/styled
+$ npm install @mui/icons-material
+$ npm install react-router-dom
