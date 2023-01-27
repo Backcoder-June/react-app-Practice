@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './todocss/TodoItem.css';
 
-import {MdDelete, MdDone} from 'react-icons/md'
+import {MdDelete, MdDone, MdUpdate} from 'react-icons/md'
 import cn from 'classnames';
 
 const TodoItem = ({todo, remove, update}) => {
@@ -27,6 +27,24 @@ const TodoItem = ({todo, remove, update}) => {
         update(modTodo); 
     };
 
+    const makeinput = e => {
+        return(
+            <>
+            <input type='text' />
+            </>
+        )
+    };
+
+
+
+    // 수정하는 동안은 체크 못하도록 
+
+    const updateTitleClickHandler = e => {
+        alert(e.target.textContent);
+        e.target.textContent = makeinput;
+            
+    };
+
 
 
   return (
@@ -38,7 +56,7 @@ const TodoItem = ({todo, remove, update}) => {
             {done && <MdDone /> }
         </div>
         
-        <span className={cn('text', {finish: done})}>{title}</span>
+        <span className={cn('text', {finish: done})} id='updateTitle' onClick={updateTitleClickHandler}>{title}  <MdUpdate /></span>
         
         <div className='remove' onClick={deleteClickHandler}>
             <MdDelete />

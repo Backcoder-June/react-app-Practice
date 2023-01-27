@@ -68,7 +68,7 @@ const TodoTemplate = () => {
         });
     };
 
-    // 수정 요청 
+    // 수정 요청  // done / title 재활용 
     const updateTodo = todo => {
     
         fetch(`${API_BASE_URL}/${todo.todoId}`, {
