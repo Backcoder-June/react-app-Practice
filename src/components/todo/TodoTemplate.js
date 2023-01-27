@@ -7,14 +7,21 @@ import TodoHeader from './TodoHeader'
 import TodoInput from './TodoInput'
 import TodoMain from './TodoMain'
 import { BASE_URL, TODO } from '../../config/host-config';
+import { getToken } from '../util/login-util';
 
 const TodoTemplate = () => {
     
+
     // 베이스 API 설정  => 이렇게 공용으로 빼줘야 배포환경 등 url 바뀔 때 바로 수정 가능
     // const API_BASE_URL = 'http://localhost:8080/api/todos'; 
     // =>근데 이 url을 여기보다 더 상위로 보내서 가져다 쓰고 싶다 
     // => config / host-config 만들어서 이쪽에 빼서 관리 => import 해서 사용 
     const API_BASE_URL = `${BASE_URL}${TODO}`
+    const ACCESS_TOKEN = getToken();
+
+    const headerInfo = {'content-type': 'application/json'
+    , 'Authorization': 'Bearer ' + ACCESS_TOKEN
+};
 
 
     // header 랑 body 에서 api 가 쓰이므로, 둘의 부모 객체인 Template 이 api 를 받자 
@@ -34,7 +41,7 @@ const TodoTemplate = () => {
     const addTodo = (todo) => {  // 자식한테 메소드채로 보내고, 자식에서 todo 매개변수를 집어넣음 
         fetch(API_BASE_URL, {
             method: 'POST', 
-            headers: {'content-type': 'application/json'},
+            headers: headerInfo,
             body: JSON.stringify(todo)
         })
         .then(res => res.json()) //res 는 서버에서 보낸 retreive, 추가된 전체목록 
@@ -52,6 +59,7 @@ const TodoTemplate = () => {
 
         // 백틱 사용 URL 
         fetch(`${API_BASE_URL}/${todoId}`, {
+            headers: headerInfo,
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -65,7 +73,7 @@ const TodoTemplate = () => {
     
         fetch(`${API_BASE_URL}/${todo.todoId}`, {
             method: 'PUT',
-            headers: { 'content-type': 'application/json' },
+            headers: headerInfo,
             body: JSON.stringify(todo)
         })
         .then(res => res.json())
@@ -78,7 +86,10 @@ const TodoTemplate = () => {
 
     // 렌더링 되자마자 할 일 => 전체목록 list Get 받아오기 => useEffect 
     useEffect(() => {
-        fetch(API_BASE_URL)
+        fetch(API_BASE_URL, {
+            method: 'GET', 
+            headers: headerInfo
+        })
             .then(res => {
                 if(res.status === 403) {
                     alert('로그인이 필요한 서비스 입니다.');
