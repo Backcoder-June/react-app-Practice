@@ -75,6 +75,19 @@ const Join = () => {
 
     // 비밀번호 검증 onChange 헨들러 
     const passwordHandler = e => {
+
+        // 여기서 변동 일어나면 패스워드확인 초기화 (validate까지)
+        document.querySelector('#passwordCheck').value = '';
+        document.querySelector('#passwordCheckInfo').textContent =''; 
+
+        setValidate({
+            ...validate, 
+            passwordCheck: false
+        });
+
+        console.log('이후에 체크 tf : ' + validate.passwordCheck);
+
+
         
         const pwRegex =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/;
         // 검증 시작 
@@ -226,7 +239,9 @@ const Join = () => {
             })
             .then (res => {
                 if (res.status === 200) {
-                    alert('회원가입을 축하합니다.'); 
+                    alert('회원가입을 축하합니다.');
+                    // 로그인 페이지로 리다이렉트 필요
+                    window.location.href= '/login';
                 } else {
                     alert('회원가입 실패. 다시 시도하세요.');
                 }
@@ -315,7 +330,7 @@ const Join = () => {
                     autoComplete="check-password"
                     onChange={passwordCheckHandler}
                 />
-                    <span style={
+                    <span id='passwordCheckInfo' style={
                         validate.passwordCheck 
                         ? {color: 'green'}
                         : {color: 'red'}

@@ -11,6 +11,7 @@ import Footer from './components/layout/Footer';
 // 최상위인 App.js 에서 import 해서 받아서 사용 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Join from './components/user/Join';
+import Login from './components/user/Login';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
 <Header />
 
 {/* <TodoTemplate /> */}
-<Join />
+
+<Login />
+{/* <Join /> */}
 
 <Footer />
 

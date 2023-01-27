@@ -1,0 +1,27 @@
+.headerbtn-group {
+    font-size: 24px;
+}
+
+.headerbtn-group a {
+    color: silver;
+    text-decoration: none;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.headerbtn-group:hover {
+    color: green;
+    font-weight: 700px;
+}
+
+.logout-btn {
+    color: silver;
+    text-decoration: none;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+

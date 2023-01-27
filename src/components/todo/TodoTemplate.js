@@ -19,7 +19,7 @@ const TodoTemplate = () => {
 
     // header 랑 body 에서 api 가 쓰이므로, 둘의 부모 객체인 Template 이 api 를 받자 
     // api 데이터를 넣어줄 때도 useState 세터로 넣어줘야 한다. 
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([]); //배열타입 명시 
 
 
     //로딩중 처리 
@@ -30,6 +30,7 @@ const TodoTemplate = () => {
     // 할일 등록 서버 요청 // 
     // 자식 => 부모 : 콜백 사용 ( props 반대 - 역치개념 ) todo를 매개변수로 보냄
     // <Todoinput add={addTodo} /> 이렇게 역치로 보냄 
+    // 새로운 todo 등록     
     const addTodo = (todo) => {  // 자식한테 메소드채로 보내고, 자식에서 todo 매개변수를 집어넣음 
         fetch(API_BASE_URL, {
             method: 'POST', 
@@ -81,7 +82,9 @@ const TodoTemplate = () => {
             .then(res => {
                 if(res.status === 403) {
                     alert('로그인이 필요한 서비스 입니다.');
-                    //리다이렉트 필요 
+                    
+                    //로그인 페이지로 리다이렉트 
+                    window.location.href= '/login'; 
                     return; 
                 }
                 if(res.status === 500){
