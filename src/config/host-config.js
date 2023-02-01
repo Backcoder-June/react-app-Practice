@@ -8,12 +8,11 @@ let backendHost;
 
 if (hostname === 'localhost') {
     backendHost = 'http://localhost:8080';
-} else if (hostname === 'lalal.com') { //앱서버 웹서버 두 URL 연결
-    backendHost = 'http://rururu.com';
+} else if (hostname === 'todoapp-s3-bucket001.s3-website.ap-northeast-2.amazonaws.com') { //앱서버 웹서버 두 URL 연결
+    backendHost = 'http://3.38.93.195:8090';
 }
 
 
-backendHost = 'http://localhost:8080'; 
 
 export const BASE_URL = backendHost;
 export const TODO = '/api/todos'; 
