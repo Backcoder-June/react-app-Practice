@@ -8,8 +8,8 @@ let backendHost;
 
 if (hostname === 'localhost') {
     backendHost = 'http://localhost:8080';
-} else if (hostname === 'todoapp-s3-bucket001.s3-website.ap-northeast-2.amazonaws.com') { //앱서버 웹서버 두 URL 연결
-    backendHost = 'http://3.38.93.195:8090';
+} else if (hostname === 'todoappbucket-001.s3-website.ap-northeast-2.amazonaws.com') { //앱서버 웹서버 두 URL 연결
+    backendHost = 'http://54.180.104.100:8090';
 }
 
 
